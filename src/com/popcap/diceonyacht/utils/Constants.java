@@ -3,6 +3,11 @@ package com.popcap.diceonyacht.utils;
 public class Constants {
 	private Constants() {}
 	
+	/**
+	 * @author Siddhartha 
+	 * All constants are declared here.
+	 */
+	
 	public static final int THREEOFAKIND_SUCCESSSCORE = 13;
 	public static final int THREEOFAKIND_FAILSCORE  = 0;
 	

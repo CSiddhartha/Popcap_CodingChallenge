@@ -2,12 +2,12 @@ package com.popcap.diceonyacht;
 
 import com.popcap.diceonyacht.Categories.CategoryName;
 
-public class Result {
+public class PotentialResult {
 	
 	public int maxScore;
 	public CategoryName category;
 	
-	public Result(){
+	public PotentialResult(){
 		maxScore =0;
 	}
 	

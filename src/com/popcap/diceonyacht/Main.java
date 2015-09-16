@@ -9,8 +9,7 @@ import  com.popcap.diceonyacht.Categories.*;
  */
 
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) {    	
         int[] input = new int[] {1,6,8,8,5};
         printArray(input);
         Arrays.sort(input);
@@ -18,6 +17,12 @@ public class Main {
         System.out.println("getSuggestions :"+ getNewSuggestions(input));
 
     }
+    
+    /***
+     * @param input Array of the 5 dice scores
+     * @param categoryName is the Category indicator 
+     * @return the score associated with that category 
+     */
         
     public static int getScore(int[] input, CategoryName categoryName) {
     	Class<?> category;
@@ -35,19 +40,28 @@ public class Main {
         return score;
     }
 
- 
+    /***
+     * 
+     * @param input Array of the 5 dice scores
+     * @return the category name with the highest potential score 
+     */
     public static String getNewSuggestions(int[] input){
-    	Result resultObj = new Result();    	
+    	PotentialResult resultObj = new PotentialResult();    	
     	for(CategoryName cn: CategoryName.values()){
     		resultObj = getResult(resultObj, cn, input);
     	}
-		return resultObj.category.toString();
-    	
+		return resultObj.category.toString();    	
     }
     
-
+    /**
+     * 
+     * @param result 
+     * @param categoryName
+     * @param input
+     * @return
+     */
     
-    private static Result getResult(Result result, CategoryName categoryName, int[] input){
+    private static PotentialResult getResult(PotentialResult result, CategoryName categoryName, int[] input){
     	int currentScore = 0;
     	Class<?> category;
     	try {			
